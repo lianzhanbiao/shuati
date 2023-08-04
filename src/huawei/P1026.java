@@ -29,10 +29,9 @@ class P1026 {
                     tmparr.add(new int[]{cnt[i], i});
                 }
                 // 重载排序按第一维数量排，第一维相等时按第二维字母ascii码排
-                Collections.sort(tmparr, (p1, p2) -> p1[0]==p2[0]?p2[1]-p1[1]:p2[0]-p1[0]);
+                tmparr.sort((p1, p2) -> p1[0] == p2[0] ? p2[1] - p1[1] : p2[0] - p1[0]);
                 // 统计前 m 个输出
-                int tmp = M;
-                for (int k=0; k<tmp; k++) {
+                for (int k=0; k<M; k++) {
                     System.out.print((char) tmparr.get(k)[1]);
                 }
                 nowcnt = 0;
